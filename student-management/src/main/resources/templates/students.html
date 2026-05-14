@@ -4,15 +4,24 @@
     <title>学生一覧</title>
 </head>
 <body>
-    <h1>学生一覧</h1>
+	<h1>学生一覧</h1>
+	<a href="/add-student">学生追加</a>
+	<table border="1">
 
-    <ul>
-        <li>truong thanh phong</li>
-        <li>vu van nam</li>
-        <li>nguyen minh anh</li>
-		<li>nguyen thanh</li>
-    </ul>
+	    <tr>
+	        <th>ID</th>
+	        <th>名前</th>
+	        <th>年齢</th>
+	        <th>Email</th>
+	    </tr>
 
-    <a href="/">ホームへ戻る</a>
+	    <tr th:each="student : ${students}">
+	        <td th:text="${student.id}"></td>
+	        <td th:text="${student.name}"></td>
+	        <td th:text="${student.age}"></td>
+	        <td th:text="${student.email}"></td>
+	    </tr>
+
+	</table>
 </body>
 </html>
