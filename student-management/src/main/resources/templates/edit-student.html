@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>学生編集</title>
+</head>
+<body>
+
+<h1>学生編集</h1>
+
+<form>
+
+    名前:
+    <input type="text" name="name" th:value="${student.name}">
+    <br><br>
+
+    年齢:
+  <input type="number" name="age" th:value="${student.age}">
+    <br><br>
+
+    Email:
+    <input type="text" name="email" th:value="${student.email}">
+    <br><br>
+
+    <button type="submit">更新</button>
+
+</form>
+
+</body>
+</html>

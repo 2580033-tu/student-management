@@ -13,6 +13,7 @@
 	        <th>名前</th>
 	        <th>年齢</th>
 	        <th>Email</th>
+			<th>操作</th>
 	    </tr>
 
 	    <tr th:each="student : ${students}">
@@ -20,6 +21,17 @@
 	        <td th:text="${student.name}"></td>
 	        <td th:text="${student.age}"></td>
 	        <td th:text="${student.email}"></td>
+			<td>
+			    <a th:href="@{/students/edit/{id}(id=${student.id})}">
+			        編集
+			    </a>
+
+			    <a
+			     th:href="@{/students/delete/{id}(id=${student.id})}"
+			     onclick="return confirm('本当に削除しますか？');">
+			        削除
+			    </a>
+			</td>
 	    </tr>
 
 	</table>
